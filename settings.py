@@ -8,11 +8,12 @@ LOCAL_DEVELOPMENT = False
 DEBUG = False
 TEMPLATE_DEBUG = DEBUG
 
-ADMINS = (
-    ("YOUR NAME", "YOUREMAILHERE@FOOOO.com"),
-)
+#add your own custom settings below
+#ADMINS = (
+#    ("firstname lastname", "youremail@somewhere.com"),
+#)
 
-MANAGERS = ADMINS
+#MANAGERS = ADMINS
 
 # Local time zone for this installation. Choices can be found here:
 # http://en.wikipedia.org/wiki/List_of_tz_zones_by_name
