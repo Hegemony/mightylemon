@@ -4,9 +4,11 @@ docutils==0.5
 
 django-mailer
 django-gravatar
-markdown
 
 # TODO: move to released versions.
 http://django-tagging.googlecode.com/svn/trunk/
 -e git+git://github.com/jezdez/django-comment-utils.git#egg=django-comment-utils
 -e git+git://github.com/leah/django-elsewhere.git#egg=django-elsewhere
+
+-e git+git://gitorious.org/python-markdown/mainline.git#egg=markdown
+
