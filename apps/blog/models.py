@@ -34,6 +34,14 @@ class BlogSettings(models.Model):
     # Good enough for now
     blog = models.ForeignKey(Blog)
     posts_per_page = models.PositiveIntegerField(_("posts per page"), default=6)
+    rss_url = models.URLField(_('rss url'), verify_exists=False, blank=True,
+                                null=True, help_text='The RSS URL included in \
+                                the page HEAD section and allows for easily \
+                                subscription.',)
+    rss_title = models.CharField(_('rss title'), max_length=200, blank=True,
+                                null=True, help_text='The title included in the\
+                                 page HEAD section and displayed \
+                                 to the user when viewing in browser.', default='My RSS Feed')
 
     class Meta:
         verbose_name_plural = 'Blog Settings'
@@ -51,6 +59,7 @@ class Post(models.Model):
     blog = models.ForeignKey(Blog, related_name=_("posts"))
     title = models.CharField(_("title"), max_length=100)
     slug = models.SlugField(_("slug"), unique=True)
+    teaser = models.TextField(_('teaser'), blank=True, null=True)
     body = models.TextField(_("body"))
     markup_type = models.CharField(max_length=10, choices=(
         ("html", "HTML"),
