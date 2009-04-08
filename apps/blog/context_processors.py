@@ -1,8 +1,13 @@
 from django.conf import settings
 
 def blog(request):
+    
+    blog = request.blog
+    
     return {
-        'blog': request.blog,
+        'blog': blog,
+        'RSS_URL': blog.settings.rss_url,
+        'RSS_TITLE': blog.settings.rss_title
     }
 
 def stats(request):
